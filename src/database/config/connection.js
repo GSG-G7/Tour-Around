@@ -17,5 +17,5 @@ const options = {
   ssl: true,
 };
 
-if (!process.env.DB_URL) throw new Error('DB_URL not found');
+if (!DB_URL) throw new Error('DB_URL not found');
 module.exports = new Pool(options);
