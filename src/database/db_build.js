@@ -5,6 +5,6 @@ const dbConnection = require('./config/connection');
 const sql = readFileSync(join(__dirname, 'db_build.sql')).toString();
 
 dbConnection.query(sql)
-  .then((result) => console.log('Build Successfully'))
+  .then((result) => console.log('Build Successfully',result))
   .catch((err) => console.log(err.stack));
 
