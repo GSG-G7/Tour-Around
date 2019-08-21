@@ -17,7 +17,7 @@ CREATE TABLE places (
     image VARCHAR,
     user_id INTEGER REFERENCES users(user_id)
 );
-INSERT INTO places(name,location,service,delivery,image,user_id) VALUES ('take-break','gaza','food',true,'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',2);
+INSERT INTO places(name,location,service,delivery,image,user_id) VALUES ('take-break','gaza','food',true,'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',1);
 
 
 COMMIT;
