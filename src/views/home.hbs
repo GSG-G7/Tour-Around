@@ -1,28 +1,30 @@
 <h1> Hi Team</h1>
-<form action='/postPlace' method='POST' id= 'form'>
-  <input type="text" name='userName' placeholder='Enter Your name'>
-  <input type="email" name='email' placeholder='Enter Your email'>
-  <input type="text" name='phone' placeholder='Enter your phone'>
-  <input type="text" name='placeName' placeholder='Enter the name of the place'>
-  <input type="text" name='location' placeholder='Enter the name of the place'>
-  <input type="text" name="service" placeholder="service">
-  <input type="text" name="delivery" placeholder="delivery">
+<form class="form" action='/postPlace' method='POST' id='form'>
+  <input type="text" name='userName' placeholder='Enter Your name' required>
+  <input type="email" name='email' placeholder='Enter Your email' required>
+  <input type="number" id="phone" name='phone' placeholder='Enter your phone' min="10" max="10" required>
+  <input type="text" name='placeName' placeholder='Enter the name of the place' required>
+  <input type="text" name='location' placeholder='Enter the location' required>
+  <input type="text" name="service" placeholder="service" required>
+  <input type="text" id="delivery" name="delivery" placeholder="delivery" required>
   <input type="text" name="img" placeholder="url">
-  <input type="submit" name="submit" >
+  <input type="submit" name="submit">
 </form>
+<span id="msg"></span>
 <section>
-    {{#each rows}}
-    <div class="place">
-        <h2>places</h2>
-        <p>{{this.place_name}}</p>
-        <p>{{this.location}}</p>
-        <p>{{this.service}}</p>
-        <p>{{this.delivery}}</p>
-        <img src="{{this.image}}" alt="photo">
-        <h4>user info</h4>
-        <p>{{this.user_name}}</p>
-        <p>{{this.phone}}</p>
-        <p>{{this.email}}</p>
-    </div>
-    {{/each}}
+  {{#each rows}}
+  <div class="place">
+    <h2>places</h2>
+    <p>{{this.place_name}}</p>
+    <p>{{this.location}}</p>
+    <p>{{this.service}}</p>
+    <p>{{this.delivery}}</p>
+    <img src="{{this.image}}" alt="photo">
+    <h4>user info</h4>
+    <p>{{this.user_name}}</p>
+    <p>{{this.phone}}</p>
+    <p>{{this.email}}</p>
+  </div>
+  {{/each}}
 </section>
+<script src="js/index.js"></script>
