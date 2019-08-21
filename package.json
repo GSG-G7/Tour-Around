@@ -22,9 +22,9 @@
     "tape": "^4.11.0"
   },
   "scripts": {
-    "test": "node tests/index.test.js | tap-spec",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "test": "NODE_ENV=test node tests/index.test.js | tap-spec",
+    "dev": "NODE_ENV=development nodemon src/index.js",
+    "start": "NODE_ENV=production node src/index.js"
   },
   "repository": {
     "type": "git",
