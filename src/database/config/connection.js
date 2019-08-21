@@ -1,4 +1,4 @@
-const {Pool} = require('pg');
+const { Pool } = require('pg');
 require('env2')('./config.env');
 
 if (!process.env.DB_URL) throw new Error('DB_URL not found');
