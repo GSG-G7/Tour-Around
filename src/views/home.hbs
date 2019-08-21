@@ -1,5 +1,15 @@
 <h1> Hi Team</h1>
-
+<form action='/postPlace' method='POST' id= 'form'>
+  <input type="text" name='userName' placeholder='Enter Your name'>
+  <input type="email" name='email' placeholder='Enter Your email'>
+  <input type="text" name='phone' placeholder='Enter your phone'>
+  <input type="text" name='placeName' placeholder='Enter the name of the place'>
+  <input type="text" name='location' placeholder='Enter the name of the place'>
+  <input type="text" name="service" placeholder="service">
+  <input type="text" name="delivery" placeholder="delivery">
+  <input type="text" name="img" placeholder="url">
+  <input type="submit" name="submit" >
+</form>
 <section>
     {{#each rows}}
     <div class="place">
