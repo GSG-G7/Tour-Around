@@ -21,7 +21,6 @@ app.engine(
   ),
 );
 
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(router);
