@@ -24,7 +24,7 @@
   "scripts": {
     "test": "NODE_ENV=test node tests/index.test.js | tap-spec",
     "dev": "NODE_ENV=development nodemon src/index.js",
-    "start": "NODE_ENV=production node src/index.js"
+    "start": " node src/index.js"
   },
   "repository": {
     "type": "git",
