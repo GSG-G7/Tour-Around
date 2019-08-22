@@ -1,5 +1,5 @@
-<h1> Hi Team</h1>
-<form action='/postPlace' method='POST' id= 'form'>
+<h1 class="main-header">Tour Around</h1>
+<form action='/postPlace' method='POST' id='form' class="form">
   <input type="text" name='userName' placeholder='Enter Your name'>
   <input type="email" name='email' placeholder='Enter Your email'>
   <input type="text" name='phone' placeholder='Enter your phone'>
@@ -8,21 +8,20 @@
   <input type="text" name="service" placeholder="service">
   <input type="text" name="delivery" placeholder="delivery">
   <input type="text" name="img" placeholder="url">
-  <input type="submit" name="submit" >
+  <input type="submit" name="submit" class="form__submit">
 </form>
-<section>
-    {{#each rows}}
-    <div class="place">
-        <h2>places</h2>
-        <p>{{this.place_name}}</p>
-        <p>{{this.location}}</p>
-        <p>{{this.service}}</p>
-        <p>{{this.delivery}}</p>
-        <img src="{{this.image}}" alt="photo">
-        <h4>user info</h4>
-        <p>{{this.user_name}}</p>
-        <p>{{this.phone}}</p>
-        <p>{{this.email}}</p>
-    </div>
-    {{/each}}
+<section class="section">
+  {{#each rows}}
+  <div class="parent">
+    <p class="parent__place-name">Place Name: {{this.place_name}}</p>
+    <p class="parent__place-location">Location: {{this.location}}</p>
+    <p class="parent__place-service">Services: {{this.service}}</p>
+    <p class="parent__place-delivery">Delevery:{{this.delivery}}</p>
+    <img src="{{this.image}}" alt="photo" class="parent__place-img">
+    <h4 class="parent__user-head">user info</h4>
+    <p class="parent__user-name">User: {{this.user_name}}</p>
+    <p class="parent__user-phone">Phone: {{this.phone}}</p>
+    <p class="parent__user-email">Email: {{this.email}}</p>
+  </div>
+  {{/each}}
 </section>
