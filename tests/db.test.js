@@ -1,4 +1,3 @@
-
 const tape = require('tape');
 const buildDB = require('../src/database/db_build');
 const getData = require('../src/database/queries/getData');
@@ -41,4 +40,4 @@ const place = {placeName:'pizzaShop',location:'gaza',service:'pizza',delivery:tr
 
 tape.onFinish(() => process.exit(0));
 
-module.exports = {getD,postU,postP};
+module.exports = { getD, postU, postP };
