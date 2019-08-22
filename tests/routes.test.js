@@ -14,25 +14,15 @@ test('Status Code equal 200', (t) => {
     });
 });
 
-
-test('post', (t) => {
+test('testing at route /postplace', (t) => {
   supertest(app)
     .post('/postPlace')
-    .send({
-      userName: 'yosef',
-      email: 'yosef@gmail.com',
-      phone: '45646',
-      placeName: 'take',
-      location: 'gaza',
-      service: 'food',
-      delivery: false,
-      img: 'https://www.google.com'
-    })
-    .expect(201)
-    .expect('content-type', /html/)
+    .expect(200)
+    .expect('Content-Type', /html/)
     .end((err, res) => {
-      // t.error(err);
-      console.log(res.body);
+      if (err) {
+        t.error(err);
+      }
       t.end();
     });
 });

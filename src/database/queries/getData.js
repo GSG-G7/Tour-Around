@@ -1,3 +1,4 @@
+
 const connection = require('../config/connection');
 
 const getData = () => connection.query('SELECT * FROM places inner join users on places.user_id = users.user_id');

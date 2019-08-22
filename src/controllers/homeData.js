@@ -17,5 +17,4 @@ const postData = (req, res) => {
 
 
 
-
 module.exports = { homeData, postData };

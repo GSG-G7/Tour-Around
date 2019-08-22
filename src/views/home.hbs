@@ -1,27 +1,31 @@
 <h1 class="main-header">Tour Around</h1>
-<form action='/postPlace' method='POST' id='form' class="form">
-  <input type="text" name='userName' placeholder='Enter Your name'>
-  <input type="email" name='email' placeholder='Enter Your email'>
-  <input type="text" name='phone' placeholder='Enter your phone'>
-  <input type="text" name='placeName' placeholder='Enter the name of the place'>
-  <input type="text" name='location' placeholder='Enter the name of the place'>
-  <input type="text" name="service" placeholder="service">
-  <input type="text" name="delivery" placeholder="delivery">
+<form class="form" action='/postPlace' method='POST' id='form'>
+  <input type="text" name='userName' placeholder='Enter Your name' required>
+  <input type="email" name='email' placeholder='Enter Your email' required>
+  <input type="tel" pattern="[0-9]{10}" id="phone" name='phone' placeholder='Enter your phone' min="10" max="10"
+    required>
+  <input type="text" name='placeName' placeholder='Enter the name of the place' required>
+  <input type="text" name='location' placeholder='Enter the location' required>
+  <input type="text" name="service" placeholder="service" required>
+  <input type="text" id="delivery" name="delivery" placeholder="delivery" required>
   <input type="text" name="img" placeholder="url">
-  <input type="submit" name="submit" class="form__submit">
+  <input type="submit" name="submit">
 </form>
+<span id="msg"></span>
 <section class="section">
   {{#each rows}}
   <div class="parent">
-    <p class="parent__place-name">Place Name: {{this.place_name}}</p>
-    <p class="parent__place-location">Location: {{this.location}}</p>
-    <p class="parent__place-service">Services: {{this.service}}</p>
-    <p class="parent__place-delivery">Delevery:{{this.delivery}}</p>
-    <img src="{{this.image}}" alt="photo" class="parent__place-img">
-    <h4 class="parent__user-head">user info</h4>
-    <p class="parent__user-name">User: {{this.user_name}}</p>
-    <p class="parent__user-phone">Phone: {{this.phone}}</p>
-    <p class="parent__user-email">Email: {{this.email}}</p>
+    <h2>places</h2>
+    <p>Place Name: {{this.place_name}}</p>
+    <p>Location: {{this.location}}</p>
+    <p>Services: {{this.service}}</p>
+    <p>Delevery: {{this.delivery}}</p>
+    <img src="{{this.image}}" alt="photo">
+    <h4>user info</h4>
+    <p>User: {{this.user_name}}</p>
+    <p>Phone: {{this.phone}}</p>
+    <p>Email: {{this.email}}</p>
   </div>
   {{/each}}
 </section>
+<script src="js/index.js"></script>

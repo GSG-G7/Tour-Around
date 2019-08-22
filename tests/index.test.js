@@ -1,2 +1,3 @@
 const { test1 } = require('./functions.test');
-require('./routes.test');
+const getData = require('./db.test');
+const routs = require('./routes.test');
