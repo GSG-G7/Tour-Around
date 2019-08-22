@@ -14,7 +14,6 @@ test('Status Code equal 200', (t) => {
     });
 });
 
-
 test('testing at route /postplace', (t) => {
   supertest(app)
     .post('/postPlace')
