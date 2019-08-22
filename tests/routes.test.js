@@ -16,15 +16,14 @@ test('Status Code equal 200', (t) => {
 
 
 test('testing at route /postplace', (t) => {
-    supertest(app)
-      .post('/postPlace')
-      .expect(200)
-      .expect('Content-Type',/html/)
-      .end((err,res) => {
-          if(err){
-              t.error(err);
-          }
-          t.end();
-      })
-  
-  })
+  supertest(app)
+    .post('/postPlace')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+      }
+      t.end();
+    });
+});
