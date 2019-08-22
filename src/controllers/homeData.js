@@ -11,9 +11,7 @@ const postData = (req, res) => {
   postUser(req.body)
     .then(({ rows }) => postPlace(req.body, rows[0].user_id))
     .catch((error) => console.log(error));
-  getData()
-    .then(({ rows }) => res.status(200).render('home', { rows }));
+  getData().then(({ rows }) => res.status(200).render('home', { rows }));
 };
-
 
 module.exports = { homeData, postData };

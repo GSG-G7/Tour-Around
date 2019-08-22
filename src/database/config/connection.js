@@ -1,12 +1,20 @@
 const { Pool } = require('pg');
 require('env2')('./config.env');
 
-if (!process.env.DB_URL) throw new Error('DB_URL not found');
+let DB_URL = '';
 
+if (process.env.NODE_ENV === 'test') {
+  DB_URL = process.env.DB_URL_TEST;
+} else if (process.env.NODE_ENV === 'development') {
+  DB_URL = process.env.DB_URL;
+} else {
+  DB_URL = process.env.HEROKU_DB_URL;
+}
 
 const options = {
-  connectionString: process.env.DB_URL,
+  connectionString: DB_URL,
   ssl: true,
 };
 
+if (!DB_URL) throw new Error('DB_URL not found');
 module.exports = new Pool(options);
