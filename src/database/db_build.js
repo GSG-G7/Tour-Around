@@ -2,7 +2,7 @@ const {join} = require('path');
 const {readFileSync} = require('fs');
 const dbConnection = require('./config/connection');
 
-let sql ;
+let sql;
 if(process.env.NODE_ENV === "test"){
   sql = readFileSync(join(__dirname, 'test_db.sql')).toString();
 }else{

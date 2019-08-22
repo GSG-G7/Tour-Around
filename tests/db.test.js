@@ -18,9 +18,12 @@ const postU = tape("testing for post user data to database",t=> {
     buildDB()
     postUser(user)
     .then(res=> {
-        t.deepEqual(user.userName, 'alaa', 'the name should be alaa')
+        t.deepEqual(res.rows[0].user_name,'alaa' , 'should be the same')
         t.end()
     })
+   
+
+
 })
 
 const postP = tape("testing for post place data to database",t=> {
@@ -28,7 +31,8 @@ const place = {placeName:'pizzaShop',location:'gaza',service:'pizza',delivery:tr
     buildDB()
     postPlace(place,2)
     .then(res=> {
-        t.deepEqual(place.placeName, 'pizzaShop', 'the name should be pizzaShop')
+        console.log(res.rows)
+        t.deepEqual(res.rows[0].place_name, 'pizzaShop', 'should be the same')
         t.end()
     })
 })
