@@ -1,4 +1,4 @@
-<h1> Hi Team</h1>
+<h1 class="main-header">Tour Around</h1>
 <form class="form" action='/postPlace' method='POST' id='form'>
   <input type="text" name='userName' placeholder='Enter Your name' required>
   <input type="email" name='email' placeholder='Enter Your email' required>
@@ -12,19 +12,19 @@
   <input type="submit" name="submit">
 </form>
 <span id="msg"></span>
-<section>
+<section class="section">
   {{#each rows}}
-  <div class="place">
-    <h2>places</h2>
-    <p>{{this.place_name}}</p>
-    <p>{{this.location}}</p>
-    <p>{{this.service}}</p>
-    <p>{{this.delivery}}</p>
+  <div class="parent">
+    <h2>place</h2>
+    <p>Place Name: {{this.place_name}}</p>
+    <p>Location: {{this.location}}</p>
+    <p>Services: {{this.service}}</p>
+    <p>Delevery: {{this.delivery}}</p>
     <img src="{{this.image}}" alt="photo">
     <h4>user info</h4>
-    <p>{{this.user_name}}</p>
-    <p>{{this.phone}}</p>
-    <p>{{this.email}}</p>
+    <p>User: {{this.user_name}}</p>
+    <p>Phone: {{this.phone}}</p>
+    <p>Email: {{this.email}}</p>
   </div>
   {{/each}}
 </section>
